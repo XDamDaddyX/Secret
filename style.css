@@ -18,26 +18,43 @@ html, body {
     -webkit-tap-highlight-color: transparent; /* Tắt hẳn cái bóng xám/trắng chớp lên khi ấn ngón tay */
 }
 
+<body>
+    <div class="app-bg"></div>
+
+    <div class="music-toggle" id="musicToggle" onclick="toggleMusic()">🎵 Music Off</div>
+    <div class="lang-toggle" id="langToggle" onclick="toggleLanguage()">🇬🇧 English</div>
+    <div class="secret-mailbox" onclick="openLetter()">💝</div>
+    ```
+
+### Bước 2: Sửa file `style.css`
+Mở file `style.css`, bạn **xóa hết** từ phần `body { ... }` đến hết phần `body::before` và `body::after` lúc nãy mình đưa. Thay toàn bộ khu vực đó bằng đoạn code này:
+
+```css
+html {
+    background-color: #ffc0cb; /* Màu nền móng cuối cùng bảo vệ chống trắng */
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
     color: var(--text-color);
-    background-color: #ffc0cb; /* Màu hồng dự phòng nếu lỗi */
+    background-color: transparent; /* Để trong suốt cho app-bg hiện lên */
 }
 
-/* Tách Gradient ra một lớp layer cố định riêng biệt để chống lỗi mất nền trên Mobile */
-body::before {
-    content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+/* Lớp Background vật lý - Chống mọi loại lỗi mất nền 3D trên Mobile */
+.app-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(135deg, #ffe4e1 0%, #ffc0cb 50%, #ffb6c1 100%);
-    z-index: -2; pointer-events: none;
+    z-index: -999; /* Luôn nằm dưới cùng */
+    pointer-events: none;
 }
 
-/* Lớp chấm bi đè lên trên lớp Gradient */
-body::after {
-    content: ''; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+/* Lớp chấm bi */
+.app-bg::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-    pointer-events: none; z-index: -1;
 }
 
 /* ================== MUSIC & LANG TOGGLE ================== */
