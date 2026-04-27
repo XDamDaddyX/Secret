@@ -15,7 +15,7 @@ const translations = {
         musicOn: '🎶 Music Playing', musicOff: '🎵 Music Off', langBtn: '🇬🇧 English',
         subtitle: 'Hello, how are you doing?', desc: 'Top pictures I love', footer: 'Actually, there are many more',
         beginBtn: 'Touch Me', instruction: 'Tap the photos to flip through, baby', backBtn: '← Back to Menu',
-        counterPrefix: 'Together: ', counterDays: ' days ', letterTitle: 'To my baby gurl Moka...',
+        counterPrefix: 'Together: ', counterDays: ' days ', letterTitle: 'To my baby gurl Moka bel...',
         letterP1: 'You know, even though we are miles apart, I am certain that one day soon, we will share a home together.',
         letterP2: 'Please take good care of yourself and love yourself more! Especially when I am not by your side. If you need anything, just call me, and I will be there, even if I am sleeping.',
         letterP3: 'Thank you for caring and loving me. I care for you the most, love you the most, and miss you the most, baby. I love you so much!',
