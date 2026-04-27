@@ -23,27 +23,19 @@ body::before {
     pointer-events: none; z-index: 0;
 }
 
-/* ================== MUSIC TOGGLE & LANG TOGGLE & SECRET MAILBOX ================== */
-.music-toggle {
-    position: fixed; top: 20px; left: 20px; z-index: 9999;
-    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px);
-    padding: 10px 15px; border-radius: 30px;
-    font-weight: 700; cursor: pointer; color: var(--text-color);
-    border: 2px solid var(--accent-rose); box-shadow: 0 4px 10px rgba(255,105,180,0.2);
-    transition: all 0.3s ease; font-size: 0.9rem;
+/* ================== MUSIC & LANG TOGGLE ================== */
+.music-toggle, .lang-toggle {
+    position: fixed; top: 20px; z-index: 9999;
+    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+    padding: 10px 15px; border-radius: 30px; font-weight: 700; cursor: pointer; 
+    color: var(--text-color); border: 2px solid var(--accent-rose); 
+    box-shadow: 0 4px 10px rgba(255,105,180,0.2); transition: all 0.3s ease; font-size: 0.9rem;
 }
-.music-toggle:hover { background: var(--accent-rose); color: white; transform: translateY(-2px); }
+.music-toggle { left: 20px; }
+.lang-toggle { right: 20px; }
+.music-toggle:hover, .lang-toggle:hover { background: var(--accent-rose); color: white; transform: translateY(-2px); }
 
-.lang-toggle {
-    position: fixed; top: 20px; right: 20px; z-index: 9999;
-    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px);
-    padding: 10px 15px; border-radius: 30px;
-    font-weight: 700; cursor: pointer; color: var(--text-color);
-    border: 2px solid var(--accent-rose); box-shadow: 0 4px 10px rgba(255,105,180,0.2);
-    transition: all 0.3s ease; font-size: 0.9rem;
-}
-.lang-toggle:hover { background: var(--accent-rose); color: white; transform: translateY(-2px); }
-
+/* ================== SECRET MAILBOX ================== */
 .secret-mailbox {
     position: fixed; bottom: 20px; left: 20px; z-index: 9999;
     font-size: 1.5rem; cursor: pointer; opacity: 0.5;
@@ -53,31 +45,24 @@ body::before {
 
 /* ================== MODAL (LETTER) ================== */
 .modal {
-    display: none; position: fixed; z-index: 10001;
-    left: 0; top: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
+    display: none; position: fixed; z-index: 10001; left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
     align-items: center; justify-content: center;
 }
 .modal-content {
-    background: #fffaf0; width: 90%; max-width: 500px;
-    padding: 20px; border-radius: 15px; position: relative;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: #fffaf0; width: 90%; max-width: 500px; padding: 20px; border-radius: 15px; position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); animation: zoomIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-@keyframes zoomIn { from { transform: scale(0); } to { transform: scale(1); } }
+@keyframes zoomIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-.close-btn {
-    position: absolute; right: 15px; top: 10px;
-    font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa;
-}
+.close-btn { position: absolute; right: 15px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer; color: #aaa; }
 .letter-paper {
     border: 2px solid #f3e5ab; padding: 20px; border-radius: 10px;
-    background-image: repeating-linear-gradient(#fffaf0, #fffaf0 30px, #e5e5e5 31px);
-    line-height: 31px;
+    background-image: repeating-linear-gradient(#fffaf0, #fffaf0 30px, #e5e5e5 31px); line-height: 31px;
 }
 .letter-title { font-family: 'Dancing Script', cursive; text-align: center; margin-bottom: 10px; color: var(--text-color); }
 .letter-text { font-size: 1.05rem; color: #444; font-weight: 500; }
-.letter-signature { text-align: right; margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 1.3rem; color: var(--text-color); }
+.letter-signature { text-align: right; margin-top: 20px; font-family: 'Dancing Script', cursive; font-size: 1.2rem; color: var(--text-color); }
 
 /* ================== LANDING PAGE ================== */
 .landing-page { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; z-index: 100; }
@@ -86,31 +71,25 @@ body::before {
 
 .landing-book-cover {
     width: 280px; height: 380px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    animation: bookFloat 4s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2); border: 2px solid rgba(255, 255, 255, 0.7);
+    animation: bookFloat 4s ease-in-out infinite; will-change: transform;
 }
+@keyframes bookFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-@keyframes bookFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-.landing-title { font-size: 80px; animation: heartbeat 1.5s infinite; filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.5)); margin-bottom: 5px; }
+.landing-title { font-size: 70px; animation: heartbeat 1.5s infinite; filter: drop-shadow(0 0 5px rgba(255, 105, 180, 0.4)); margin-bottom: 5px; will-change: transform; }
 @keyframes heartbeat { 0%, 28%, 70% { transform: scale(1); } 14%, 42% { transform: scale(1.15); } }
 
-.landing-subtitle { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: var(--text-color); font-weight: 700; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); margin-bottom: 5px; }
+.landing-subtitle { font-family: 'Dancing Script', cursive; font-size: 2.5rem; color: var(--text-color); font-weight: 700; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); margin-bottom: 5px; }
 .landing-description { font-size: 1.1rem; font-weight: 700; color: #d81b60; font-style: italic; }
 .divider { width: 40px; height: 3px; background: #ff69b4; border-radius: 5px; margin: 15px 0; opacity: 0.6; }
 .landing-footer { font-size: 0.9rem; font-weight: 600; opacity: 0.7; }
 
 .begin-btn {
     padding: 15px 40px; font-size: 1.2rem; font-family: 'Quicksand', sans-serif; font-weight: 700;
-    background: linear-gradient(135deg, #ff69b4, #ff1493);
-    color: white; border: none; border-radius: 50px; cursor: pointer;
-    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4);
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ff69b4, #ff1493); color: white; border: none; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.4); transition: all 0.3s ease;
 }
 .begin-btn:hover { transform: scale(1.05) translateY(-3px); box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6); }
 
@@ -120,36 +99,34 @@ body::before {
 .stack-card {
     position: absolute; width: 100%; height: 100%;
     background: var(--white); border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15); padding: 15px; cursor: pointer;
-    transform-origin: center bottom; transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s;
-    display: flex; flex-direction: column; user-select: none; border: 2px solid #ffe4e1;
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.15); padding: 15px; cursor: pointer;
+    transform-origin: center bottom; display: flex; flex-direction: column; user-select: none; border: 2px solid #ffe4e1;
+    /* Thêm will-change để ép dùng GPU xử lý mượt mà trên điện thoại */
+    will-change: transform, opacity;
 }
-.stack-card .page-image { width: 100%; height: 75%; border-radius: 1rem; background-size: cover; background-position: center; margin-bottom: 15px; border: 1px solid #ffe4e1; }
-.stack-card .page-quote { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: 1rem; color: var(--text-color); }
+.stack-card .page-image { width: 100%; height: 75%; border-radius: 1rem; background-size: cover; background-position: center; margin-bottom: 15px; border: 1px solid #ffe4e1; pointer-events: none; }
+.stack-card .page-quote { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 700; font-size: 1rem; color: var(--text-color); pointer-events: none; }
 
 /* ================== CONTROLS & COUNTER ================== */
 .controls-area { text-align: center; animation: slideUp 0.8s ease-out 0.4s both; }
 .instruction-text { margin-bottom: 15px; font-weight: 700; font-size: 1.1rem; }
 .back-btn { padding: 10px 25px; font-size: 1rem; font-family: 'Quicksand', sans-serif; font-weight: 700; background: rgba(255, 255, 255, 0.9); color: var(--text-color); border: 2px solid var(--accent-rose); border-radius: 20px; cursor: pointer; transition: all 0.3s ease; }
-.back-btn:hover { background: var(--accent-rose); color: white; transform: translateY(-2px); }
 
 .love-counter {
     position: fixed; bottom: 20px; right: 20px; z-index: 9999;
-    font-size: 0.95rem; font-weight: 700; font-family: 'Quicksand', sans-serif;
-    color: var(--text-color); background: rgba(255, 255, 255, 0.6);
-    padding: 10px 20px; border-radius: 30px; backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+    font-size: 0.9rem; font-weight: 700; font-family: 'Quicksand', sans-serif;
+    color: var(--text-color); background: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px; border-radius: 30px; border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
 }
 
 /* ================== ANIMATIONS & EFFECTS ================== */
 .hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: 1; overflow: hidden; }
-.petal { position: absolute; color: rgba(255, 105, 180, 0.6); text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); animation: fall linear infinite, sway 2s ease-in-out infinite alternate; }
-@keyframes fall { 0% { top: -10%; transform: rotate(0deg); opacity: 0; } 10% { opacity: 1; } 80% { opacity: 1; } 100% { top: 110%; transform: rotate(720deg); opacity: 0; } }
-@keyframes sway { 0% { margin-left: 0px; } 100% { margin-left: 50px; } }
+.petal { position: absolute; color: rgba(255, 105, 180, 0.6); text-shadow: 0 0 3px rgba(255, 255, 255, 0.8); animation: fall linear infinite; will-change: transform, top; }
+@keyframes fall { 0% { top: -10%; transform: translateX(0) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 80% { opacity: 1; } 100% { top: 110%; transform: translateX(50px) rotate(360deg); opacity: 0; } }
 
 .background-circles { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; margin: 0; padding: 0; z-index: 0; pointer-events: none; }
-.background-circles li { position: absolute; display: block; list-style: none; width: 20px; height: 20px; background: rgba(255, 255, 255, 0.4); animation: floatUp 25s linear infinite; bottom: -150px; border-radius: 50%; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); filter: blur(3px); }
+.background-circles li { position: absolute; display: block; list-style: none; background: rgba(255, 255, 255, 0.4); animation: floatUp 25s linear infinite; bottom: -150px; border-radius: 50%; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); will-change: transform; }
 .background-circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
 .background-circles li:nth-child(2) { left: 10%; width: 40px; height: 40px; animation-delay: 2s; animation-duration: 12s; }
 .background-circles li:nth-child(3) { left: 70%; width: 60px; height: 60px; animation-delay: 4s; }
@@ -158,15 +135,27 @@ body::before {
 @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.sparkle { position: fixed; width: 8px; height: 8px; background: #ff69b4; border-radius: 50%; pointer-events: none; z-index: 9999; box-shadow: 0 0 10px #ff1493; animation: sparkleFly 0.8s ease-out forwards; }
+.sparkle { position: fixed; width: 6px; height: 6px; background: #ff69b4; border-radius: 50%; pointer-events: none; z-index: 9999; box-shadow: 0 0 8px #ff1493; animation: sparkleFly 0.6s ease-out forwards; will-change: transform, opacity; }
 @keyframes sparkleFly { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(0) translateY(var(--ty)) translateX(var(--tx)); opacity: 0; } }
 
 .floating-msg {
-    position: fixed; font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #d81b60; font-weight: bold; pointer-events: none; z-index: 10000;
-    text-shadow: 0px 0px 8px white; animation: floatMsg 1.5s ease-out forwards; transform: translate(-50%, -50%);
+    position: fixed; font-family: 'Dancing Script', cursive; font-size: 1.5rem; color: #d81b60; font-weight: bold; pointer-events: none; z-index: 10000;
+    text-shadow: 0px 0px 6px white; animation: floatMsg 1.2s ease-out forwards; transform: translate(-50%, -50%); will-change: transform, opacity;
 }
-@keyframes floatMsg {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
-    50% { transform: translate(-50%, -80px) scale(1.2); }
-    100% { opacity: 0; transform: translate(-50%, -120px) scale(1); }
+@keyframes floatMsg { 0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); } 50% { transform: translate(-50%, -60px) scale(1.1); } 100% { opacity: 0; transform: translate(-50%, -90px) scale(1); } }
+
+/* ================== ĐIỀU CHỈNH RIÊNG CHO ĐIỆN THOẠI ĐỂ CHỐNG LAG ================== */
+@media screen and (max-width: 768px) {
+    /* Tắt blur nền vì ngốn phần cứng trên mobile */
+    .landing-book-cover, .music-toggle, .lang-toggle, .love-counter, .modal { backdrop-filter: none; -webkit-backdrop-filter: none; }
+    .landing-book-cover { background: rgba(255, 255, 255, 0.85); box-shadow: 0 5px 15px rgba(255, 105, 180, 0.15); }
+    .music-toggle, .lang-toggle { background: rgba(255, 255, 255, 0.95); font-size: 0.8rem; padding: 8px 12px; }
+    .modal-content { background: #fffaf0; width: 95%; padding: 15px; }
+    
+    /* Thu nhỏ chữ và nút cho vừa màn hình */
+    .landing-title { font-size: 60px; }
+    .landing-subtitle { font-size: 2rem; }
+    .stack-container { width: 90vw; height: 60vh; max-height: 450px; }
+    .love-counter { font-size: 0.8rem; padding: 8px 12px; bottom: 15px; right: 15px; }
+    .secret-mailbox { bottom: 15px; left: 15px; font-size: 1.2rem; }
 }
