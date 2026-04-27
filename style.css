@@ -1,4 +1,9 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent; /* Thêm dòng này để tắt chớp nền trên điện thoại */
+}
 
 :root {
     --primary-pink: #ffc0cb;
