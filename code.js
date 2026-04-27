@@ -1,18 +1,10 @@
 // --- BỘ TỪ ĐIỂN 3 NGÔN NGỮ ---
 const translations = {
     vi: {
-        musicOn: '🎶 Nhạc đang phát',
-        musicOff: '🎵 Nhạc đang tắt',
-        langBtn: '🇻🇳 Tiếng Việt',
-        subtitle: 'Hế lô em cóa khỏe không',
-        desc: 'Những bức ảnh anh thích nhất',
-        footer: 'Thật ra là còn nhiều lắm',
-        beginBtn: 'Chạm đê',
-        instruction: 'Bấm vào ảnh để lướt qua nha babi',
-        backBtn: '← Quay Lại Menu',
-        counterPrefix: 'Bên nhau: ',
-        counterDays: ' ngày ',
-        letterTitle: 'Gửi Moka của anh...',
+        musicOn: '🎶 Nhạc đang phát', musicOff: '🎵 Nhạc đang tắt', langBtn: '🇻🇳 Tiếng Việt',
+        subtitle: 'Hế lô em cóa khỏe không', desc: 'Những bức ảnh anh thích nhất', footer: 'Thật ra là còn nhiều lắm',
+        beginBtn: 'Chạm đê', instruction: 'Bấm vào ảnh để lướt qua nha babi', backBtn: '← Quay Lại Menu',
+        counterPrefix: 'Bên nhau: ', counterDays: ' ngày ', letterTitle: 'Gửi Moka của anh...',
         letterP1: 'Em biết không, mặc dù là đang yêu xa nhưng anh dám chắc 1 ngày nào đó rồi anh với em sẽ về chung một nhà sớm thôii',
         letterP2: 'Hãy cố gắng chăm sóc, yêu thương bản thân của em nhiều hơn nhé! nhất là khi anh không có ở bên cạnh em, Nếu cần gì thì cứ gọi anh và anh sẽ đáp ứng ngay kể cả lúc anh đi ngủ',
         letterP3: 'Cảm ơn em vì đã quan tâm, yêu thương anh. Anh thương em nhất, yêu em nhất, và cũng nhớ em nhất nữa á baby. 我非常爱你!',
@@ -20,18 +12,10 @@ const translations = {
         popMessages: ["Nhớ em 💖", "Thương em 😘", "Xinh vcl 😍", "My babyyyyy 💕", "Love you 💋"]
     },
     en: {
-        musicOn: '🎶 Music Playing',
-        musicOff: '🎵 Music Off',
-        langBtn: '🇬🇧 English',
-        subtitle: 'Hello, how are you doing?',
-        desc: 'Top pictures I love',
-        footer: 'Actually, there are many more',
-        beginBtn: 'Touch Me',
-        instruction: 'Tap the photos to flip through, baby',
-        backBtn: '← Back to Menu',
-        counterPrefix: 'Together: ',
-        counterDays: ' days ',
-        letterTitle: 'To my Moka...',
+        musicOn: '🎶 Music Playing', musicOff: '🎵 Music Off', langBtn: '🇬🇧 English',
+        subtitle: 'Hello, how are you doing?', desc: 'Top pictures I love', footer: 'Actually, there are many more',
+        beginBtn: 'Touch Me', instruction: 'Tap the photos to flip through, baby', backBtn: '← Back to Menu',
+        counterPrefix: 'Together: ', counterDays: ' days ', letterTitle: 'To my Moka...',
         letterP1: 'You know, even though we are miles apart, I am certain that one day soon, we will share a home together.',
         letterP2: 'Please take good care of yourself and love yourself more! Especially when I am not by your side. If you need anything, just call me, and I will be there, even if I am sleeping.',
         letterP3: 'Thank you for caring and loving me. I care for you the most, love you the most, and miss you the most, baby. I love you so much!',
@@ -39,18 +23,10 @@ const translations = {
         popMessages: ["Miss you 💖", "Care for u 😘", "Gorgeous af 😍", "My babyyyyy 💕", "Love you 💋"]
     },
     zh: {
-        musicOn: '🎶 音乐播放中',
-        musicOff: '🎵 音乐已关',
-        langBtn: '🇨🇳 中文',
-        subtitle: '哈喽，你最近好吗？',
-        desc: '我最爱的照片',
-        footer: '其实还有很多',
-        beginBtn: '点我',
-        instruction: '点击照片翻页哦，宝贝',
-        backBtn: '← 返回菜单',
-        counterPrefix: '在一起: ',
-        counterDays: ' 天 ',
-        letterTitle: '致我的 Moka...',
+        musicOn: '🎶 音乐播放中', musicOff: '🎵 音乐已关', langBtn: '🇨🇳 中文',
+        subtitle: '哈喽，你最近好吗？', desc: '我最爱的照片', footer: '其实还有很多',
+        beginBtn: '点我', instruction: '点击照片翻页哦，宝贝', backBtn: '← 返回菜单',
+        counterPrefix: '在一起: ', counterDays: ' 天 ', letterTitle: '致我的 Moka...',
         letterP1: '你知道吗，虽然我们是异地恋，但我坚信总有一天我们会很快拥有一个共同的家。',
         letterP2: '请多照顾自己，多爱自己一点！特别是我不在你身边的时候。如果需要什么尽管打给我，就算在睡觉我也会立刻答应你。',
         letterP3: '谢谢你对我的关心和爱。我最疼你，最爱你，也最想你，宝贝。我非常爱你！',
@@ -59,7 +35,6 @@ const translations = {
     }
 };
 
-// Đã đưa tiếng Anh ('en') lên làm mặc định
 const langs = ['en', 'vi', 'zh'];
 let langIndex = 0;
 let currentLang = langs[langIndex];
@@ -95,11 +70,12 @@ const myPhotos = [
     { img: '19774045ba3e3b60622f.jpg', quote_vi: 'Em yêu rau má', quote_en: 'You love pennywort', quote_zh: '你爱喝积雪草' }
 ];
 
-// Dùng hàm sort kết hợp Math.random() để xáo trộn mảng ảnh ngẫu nhiên
 let stack = [...myPhotos].sort(() => Math.random() - 0.5);
 let isAnimating = false;
 
-// --- LOGIC CHUYỂN 3 NGÔN NGỮ ---
+// Tự động nhận diện xem thiết bị có dùng màn hình cảm ứng không (điện thoại/tablet)
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 function toggleLanguage() {
     langIndex = (langIndex + 1) % 3;
     currentLang = langs[langIndex];
@@ -108,7 +84,6 @@ function toggleLanguage() {
 
 function applyLanguage() {
     const t = translations[currentLang];
-    
     document.getElementById('langToggle').innerHTML = t.langBtn;
     document.getElementById('t_subtitle').innerHTML = t.subtitle;
     document.getElementById('t_desc').innerHTML = t.desc;
@@ -116,7 +91,6 @@ function applyLanguage() {
     document.getElementById('t_beginBtn').innerHTML = t.beginBtn;
     document.getElementById('t_instruction').innerHTML = t.instruction;
     document.getElementById('t_backBtn').innerHTML = t.backBtn;
-    
     document.getElementById('t_letterTitle').innerHTML = t.letterTitle;
     document.getElementById('t_letterP1').innerHTML = t.letterP1;
     document.getElementById('t_letterP2').innerHTML = t.letterP2;
@@ -142,22 +116,14 @@ function applyLanguage() {
             card.querySelector('.page-quote').innerHTML = `"${quoteText}"`;
         }
     });
-    
     updateLoveCounter();
 }
 
-// --- LOGIC HỘP THƯ BÍ MẬT ---
-function openLetter() {
-    document.getElementById('letterModal').style.display = 'flex';
-}
-function closeLetter() {
-    document.getElementById('letterModal').style.display = 'none';
-}
+function openLetter() { document.getElementById('letterModal').style.display = 'flex'; }
+function closeLetter() { document.getElementById('letterModal').style.display = 'none'; }
 window.onclick = function(event) {
     const modal = document.getElementById('letterModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
+    if (event.target == modal) modal.style.display = 'none';
 }
 
 function toggleMusic() {
@@ -181,11 +147,7 @@ function startBook() {
     const t = translations[currentLang];
     
     if(music) {
-        music.play().then(() => {
-            toggleBtn.innerHTML = t.musicOn;
-        }).catch(e => {
-            toggleBtn.innerHTML = t.musicOff;
-        });
+        music.play().then(() => { toggleBtn.innerHTML = t.musicOn; }).catch(e => { toggleBtn.innerHTML = t.musicOff; });
     }
 
     landingPage.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -207,22 +169,28 @@ function createFallingPetal() {
     petal.style.left = Math.random() * window.innerWidth + 'px';
     petal.style.fontSize = (Math.random() * 12 + 12) + 'px';
     const fallDur = Math.random() * 4 + 5;
-    petal.style.animationDuration = `${fallDur}s, ${Math.random() * 2 + 2}s`;
+    petal.style.animationDuration = `${fallDur}s`;
     document.getElementById('heartsContainer').appendChild(petal);
     setTimeout(() => petal.remove(), fallDur * 1000);
 }
-setInterval(createFallingPetal, 400);
+// Giảm tần suất rớt hạt trên mobile cho mượt
+setInterval(createFallingPetal, isTouchDevice ? 800 : 400);
 
 function createSparkles(e) {
-    for (let i = 0; i < 15; i++) {
+    // Giảm số lượng hạt trên mobile để chống giật
+    const numSparkles = isTouchDevice ? 6 : 15;
+    for (let i = 0; i < numSparkles; i++) {
         const sparkle = document.createElement('div');
         sparkle.className = 'sparkle';
-        sparkle.style.left = e.clientX + 'px';
-        sparkle.style.top = e.clientY + 'px';
-        sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
-        sparkle.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+        // Xử lý tọa độ chạm tay cho mobile hoặc chuột cho PC
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        sparkle.style.left = clientX + 'px';
+        sparkle.style.top = clientY + 'px';
+        sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 150 + 'px');
+        sparkle.style.setProperty('--ty', (Math.random() - 0.5) * 150 + 'px');
         document.body.appendChild(sparkle);
-        setTimeout(() => sparkle.remove(), 800);
+        setTimeout(() => sparkle.remove(), 600);
     }
 }
 
@@ -231,10 +199,12 @@ function createFloatingMessage(e) {
     const msg = document.createElement('div');
     msg.className = 'floating-msg';
     msg.innerText = msgs[Math.floor(Math.random() * msgs.length)];
-    msg.style.left = e.clientX + 'px';
-    msg.style.top = e.clientY + 'px';
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    msg.style.left = clientX + 'px';
+    msg.style.top = clientY + 'px';
     document.body.appendChild(msg);
-    setTimeout(() => msg.remove(), 1500);
+    setTimeout(() => msg.remove(), 1200);
 }
 
 function initStack() {
@@ -253,21 +223,24 @@ function initStack() {
                           <div class="page-quote">"${quoteText}"</div>`;
         container.appendChild(card);
         
-        card.addEventListener('mousemove', (e) => {
-            if (isAnimating) return;
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
-            card.style.transform = `perspective(1000px) translateZ(30px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
+        // CHỈ thêm hiệu ứng nghiêng 3D nếu không phải thiết bị cảm ứng (Mobile)
+        if (!isTouchDevice) {
+            card.addEventListener('mousemove', (e) => {
+                if (isAnimating) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 15; // Giảm độ nghiêng cho mượt
+                const rotateY = (centerX - x) / 15;
+                card.style.transform = `perspective(1000px) translateZ(30px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
 
-        card.addEventListener('mouseleave', () => {
-            if (!isAnimating) updateStackVisuals();
-        });
+            card.addEventListener('mouseleave', () => {
+                if (!isAnimating) updateStackVisuals();
+            });
+        }
     });
     updateStackVisuals();
 }
@@ -277,6 +250,8 @@ function updateStackVisuals() {
     cards.forEach((card, index) => {
         const countFromTop = cards.length - 1 - index;
         card.style.zIndex = index;
+        // Áp dụng trực tiếp transition cho trạng thái xếp chồng để mượt mà hơn
+        card.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
         card.style.transform = `translateY(${countFromTop * -15}px) scale(${1 - (countFromTop * 0.05)}) rotateZ(${countFromTop * 3}deg)`;
         
         if (index === cards.length - 1) {
@@ -298,7 +273,8 @@ function sendToBack() {
     const cards = container.querySelectorAll('.stack-card');
     const topCard = cards[cards.length - 1];
 
-    topCard.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s ease-out';
+    // Thay đổi timing mượt hơn cho mobile
+    topCard.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease-out';
     topCard.style.transform = 'translateX(150%) rotateZ(25deg) translateY(50px) scale(0.5)';
     topCard.style.opacity = '0';
 
@@ -308,17 +284,16 @@ function sendToBack() {
         const countFromTop = cards.length - 1;
         topCard.style.transform = `translateY(${countFromTop * -15}px) scale(${1 - (countFromTop * 0.05)}) rotateZ(${countFromTop * 3}deg)`;
         
+        // Buộc trình duyệt vẽ lại khung hình (Reflow)
         void topCard.offsetWidth;
 
         updateStackVisuals();
         topCard.style.opacity = '1';
         isAnimating = false;
-    }, 450);
+    }, 400); // Rút ngắn thời gian chờ trùng với opacity
 }
 
-function backToLanding() {
-    location.reload(); 
-}
+function backToLanding() { location.reload(); }
 
 function updateLoveCounter() {
     const startDate = new Date('2026-02-18'); 
