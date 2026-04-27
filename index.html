@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moka bóe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="music-toggle" id="musicToggle" onclick="toggleMusic()">🎵 Music Off</div>
+    
+    <div class="lang-toggle" id="langToggle" onclick="toggleLanguage()">🇬🇧 English</div>
+
+    <div class="secret-mailbox" onclick="openLetter()">💝</div>
+
+    <div id="letterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLetter()">&times;</span>
+            <div class="letter-paper">
+                <h2 class="letter-title" id="t_letterTitle">To my Moka...</h2>
+                <div class="letter-text">
+                    <p id="t_letterP1">You know, even though we are miles apart, I am certain that one day soon, we will share a home together.</p>
+                    <p id="t_letterP2">Please take good care of yourself and love yourself more! Especially when I am not by your side. If you need anything, just call me, and I will be there, even if I am sleeping.</p>
+                    <p id="t_letterP3">Thank you for caring and loving me. I care for you the most, love you the most, and miss you the most, baby. I love you so much!</p>
+                </div>
+                <p class="letter-signature" id="t_letterSig">P.S.: Thanh Nhan, the most handsome guy in the gym</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="hearts-container" id="heartsContainer"></div>
+    <ul class="background-circles">
+        <li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <div class="landing-page" id="landingPage">
+        <div class="landing-content">
+            <div class="landing-book">
+                <div class="landing-book-cover">
+                    <h1 class="landing-title">💖</h1>
+                    <p class="landing-subtitle" id="t_subtitle">Hello, how are you doing?</p>
+                    <p class="landing-description" id="t_desc">Top pictures I love</p>
+                    <div class="divider"></div>
+                    <p class="landing-footer" id="t_footer">Actually, there are many more</p>
+                </div>
+            </div>
+            <button class="begin-btn" id="t_beginBtn" onclick="startBook()">Touch me</button>
+        </div>
+    </div>
+
+    <div class="book-view" id="bookView" style="display: none;">
+        <div class="stack-container" id="stackContainer"></div>
+        <div class="controls-area">
+            <p class="instruction-text" id="t_instruction">Tap the photos to flip through, baby</p>
+            <button class="back-btn" id="t_backBtn" onclick="backToLanding()">← Back to Menu</button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="She & Him - I Thought I Saw Your Face Today (SPOTISAVER).mp3" type="audio/mpeg">
+    </audio>
+    <div id="loveCounter" class="love-counter">Calculating...</div>
+
+    <script src="code.js"></script>
+</body>
+</html> 
